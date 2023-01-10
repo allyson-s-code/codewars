@@ -19,3 +19,43 @@ function updateLight(current) {
     return null;
   }
 }
+
+//other solutions
+
+function updateLight(current) {
+  return current === "yellow"
+    ? "red"
+    : current === "green"
+    ? "yellow"
+    : "green";
+}
+
+//this one blows my mind
+const updateLight = (current) =>
+  ({
+    green: "yellow",
+    yellow: "red",
+    red: "green",
+  }[current]);
+
+function updateLight(current) {
+  switch (current) {
+    case "green":
+      return "yellow";
+      break;
+    case "yellow":
+      return "red";
+      break;
+    case "red":
+      return "green";
+      break;
+    default:
+      throw "Error: wrong input";
+      break;
+  }
+}
+
+function updateLight(current) {
+  const lights = ["green", "yellow", "red"];
+  return lights[(lights.indexOf(current) + 1) % lights.length];
+}
