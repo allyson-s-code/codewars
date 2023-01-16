@@ -14,7 +14,7 @@ function disemvowel(str) {
   return str.replace(/[aeiou]/gi, "");
 }
 
-//another solution
+//another solution- I don't understand the -1 - does it just mean if it doesn't match a vowel then add to string?
 const disemvowel = (str) => {
   const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
   let newStr = "";
@@ -26,3 +26,14 @@ const disemvowel = (str) => {
   }
   return newStr;
 };
+
+function disemvowel(str) {
+  let result = [];
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < str.length; i += 1) {
+    if (!vowels.includes(str[i].toLowerCase())) {
+      result.push(str[i]);
+    }
+  }
+  return result.join("");
+}
