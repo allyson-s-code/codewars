@@ -27,3 +27,13 @@ function mergeArrays(arr1, arr2) {
 function mergeArrays(arr1, arr2) {
   return [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
 }
+
+function mergeArrays(arr1, arr2) {
+  let mergedArray = [...arr1, ...arr2];
+  return (
+    mergedArray
+      //filter method is checking to see if each item is the first occurance of that item and therefore unique
+      .filter((item, index) => mergedArray.indexOf(item) == index)
+      .sort((a, b) => a - b)
+  );
+}
