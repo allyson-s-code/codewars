@@ -29,3 +29,26 @@ function duplicateCount(text) {
   }
   return count;
 }
+
+/* Explanation
+/
+(.)\1+
+/
+gm
+1st Capturing Group (.)
+. matches any character (except for line terminators)
+\1 matches the same text as most recently matched by the 1st capturing group
++ matches the previous token between one and unlimited times, as many times as possible, giving back as needed (greedy)
+Global pattern flags 
+g modifier: global. All matches (don't return after first match)
+m modifier: multi line. Causes ^ and $ to match the begin/end of each line (not only begin/end of string)
+*/
+
+function duplicateCount(text) {
+  return (text,
+  toLowerCase()
+    .split("")
+    .sort()
+    .join("")
+    .match(/(.)\1+/g) || []).length;
+}
