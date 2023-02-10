@@ -22,3 +22,9 @@ function gimme(triplet) {
   let middleNum = sortedTriplet[1];
   return triplet.indexOf(middleNum);
 }
+
+//can also skip middle and just do:
+
+function gimme(triplet) {
+  return triplet.indexOf([...triplet].sort((a, b) => a - b)[1]);
+}
