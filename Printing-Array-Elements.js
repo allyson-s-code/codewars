@@ -12,6 +12,10 @@ function printArray(array) {
   return array.join();
 }
 
-or function printArray(array) {
+//or 
+
+function printArray(array) {
     return array.toString();
 }
+
+const printArray = (arr) => arr.join(",");
