@@ -15,3 +15,22 @@ The test cases contain numbers only by mistake.
 function correct(string) {
   return string.replaceAll("5", "S").replaceAll("0", "O").replaceAll("1", "I");
 }
+
+//another solution
+
+function correct(string) {
+  const map = {
+    0: "O",
+    1: "I",
+    5: "S",
+  };
+
+  return string
+    .split("")
+    .map((c) => (map.hasOwnProperty(c) ? map[c] : c))
+    .join("");
+}
+
+function correct(string) {
+  return [...string].map((a) => ({ 0: "O", 5: "S", 1: "I" }[a] || a)).join("");
+}
