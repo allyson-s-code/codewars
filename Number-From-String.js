@@ -8,5 +8,5 @@ getNumberFromString(s)
 
 
 function getNumberFromString(s) {
-    return parseInt(s.match(/\d+/));
-  }
+  return parseInt(s.replace(/[^0-9]/g,""));
+}
