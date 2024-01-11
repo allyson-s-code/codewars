@@ -15,3 +15,13 @@ function switcheroo(x){
     } 
     return newArray.join("");
   }
+
+  /* Mapping over */
+
+  function switcheroo(x){
+  
+    return x.split("").map(letter => {
+      return letter == "a" ? "b" : letter == "b" ? "a" : letter;
+    }).join("");
+  }
+
